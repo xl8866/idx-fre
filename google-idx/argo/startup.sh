@@ -3,14 +3,14 @@
 # ===============================
 # Cloudflare Argo 配置
 # ===============================
-ARGO_TOKEN=
+ARGO_TOKEN=""
 
 # ===============================
-# 哪吒监控配置（与 Node.js 版本语义一致）
+# 哪吒监控配置（哪吒 v0）
 # ===============================
-NEZHA_SERVER="nazha.kkkk.hidns.co"   # v1: nz.abc.com:8008 | v0: nz.abc.com
-NEZHA_PORT="443"       # v1 留空 | v0 填 443 / 5555 等
-NEZHA_KEY="ZEE79y8zOazCJnT623"         # v1: NZ_CLIENT_SECRET | v0: Agent Key
+NEZHA_SERVER="nazha.kkkk.hidns.co"
+NEZHA_PORT="443"
+NEZHA_KEY="ZEE79y8zOazCJnT623"
 
 
 # ===============================
@@ -39,20 +39,11 @@ fi
 if [ -n "$NEZHA_SERVER" ] && [ -n "$NEZHA_KEY" ]; then
   echo "[INFO] Starting Nezha Agent..."
 
-  if [ -n "$NEZHA_PORT" ]; then
-    # ---------- 哪吒 v0 ----------
-    nohup $PWD/nezha-agent \
-      -s ${NEZHA_SERVER}:${NEZHA_PORT} \
-      -p ${NEZHA_KEY} \
-      --tls \
-      > $PWD/nezha.log 2>&1 &
-  else
-    # ---------- 哪吒 v1 ----------
-    nohup $PWD/nezha-agent \
-      -s ${NEZHA_SERVER} \
-      -p ${NEZHA_KEY} \
-      > $PWD/nezha.log 2>&1 &
-  fi
+  nohup $PWD/nezha-agent \
+    -s ${NEZHA_SERVER}:${NEZHA_PORT} \
+    -p ${NEZHA_KEY} \
+    --tls \
+    > $PWD/nezha.log 2>&1 &
 else
   echo "[WARN] NEZHA_SERVER or NEZHA_KEY not set, skip Nezha Agent"
 fi
