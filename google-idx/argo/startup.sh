@@ -8,9 +8,9 @@ ARGO_TOKEN=
 # ===============================
 # 哪吒监控配置（与 Node.js 版本语义一致）
 # ===============================
-NEZHA_SERVER="${nazha.kkkk.hidns.co}"   # v1: nz.abc.com:8008 | v0: nz.abc.com
-NEZHA_PORT="${443}"       # v1 留空 | v0 填 443 / 5555 等
-NEZHA_KEY="${ZEE79y8zOazCJnT623}"         # v1: NZ_CLIENT_SECRET | v0: Agent Key
+NEZHA_SERVER="nazha.kkkk.hidns.co"   # v1: nz.abc.com:8008 | v0: nz.abc.com
+NEZHA_PORT="443"       # v1 留空 | v0 填 443 / 5555 等
+NEZHA_KEY="ZEE79y8zOazCJnT623"         # v1: NZ_CLIENT_SECRET | v0: Agent Key
 
 
 # ===============================
