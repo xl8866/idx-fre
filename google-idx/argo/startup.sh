@@ -10,7 +10,7 @@ ARGO_TOKEN=""
 # ===============================
 NEZHA_SERVER="nazha.kkkk.hidns.co"
 NEZHA_PORT="443"
-NEZHA_KEY="ZEE79y8zOazCJnT623"
+NEZHA_KEY="OEXrjQqQcPe3c855cu"
 
 
 # ===============================
